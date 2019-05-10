@@ -1,0 +1,35 @@
+:host {
+  display: grid;
+
+  grid-template:
+      " navToggle title " auto
+      / auto minmax(0, 1fr)
+  ;
+
+  padding: 15px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.33);
+  z-index: 1;
+
+  button {
+    grid-area: navToggle;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    margin: 20;
+    margin-right: 15px;
+    padding: 0;
+  }
+
+  a {
+    grid-area: title;
+    text-decoration: none;
+  }
+
+  h1 {
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

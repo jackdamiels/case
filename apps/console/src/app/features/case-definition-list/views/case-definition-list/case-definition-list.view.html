@@ -1,0 +1,17 @@
+<ng-container *ngIf="{ state$: store.state$ | async } as subs">
+  <div
+    class="ce-panel ce-coffee-list-view__list-item"
+    *ngIf="subs.state$.requests.listCaseDefinitions.inProgress"
+  >
+    <div class="ce-loader ce-loader--takeover">Loading</div>
+  </div>
+
+  <ng-container *ngIf="!subs.state$.requests.listCaseDefinitions.inProgress">
+
+    <cem-case-case-definition
+      *ngFor="let definition of subs.state$.caseDefinitionList.definitions"
+      [caseDefinition]="definition"
+    ></cem-case-case-definition>
+
+  </ng-container>
+</ng-container>
